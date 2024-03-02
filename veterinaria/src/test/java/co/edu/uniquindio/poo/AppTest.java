@@ -73,7 +73,5 @@ public class AppTest {
         LOG.info("Error, el peso no puede ser negativo");
      }
 
- 
-
      
 }
