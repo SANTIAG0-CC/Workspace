@@ -9,15 +9,14 @@ package co.edu.uniquindio.poo;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.logging.Logger;
 import org.junit.jupiter.api.Test;
 
 /**
  * Unit test for simple App.
  */
-public class AppTest {
-    private static final Logger LOG = Logger.getLogger(AppTest.class.getName());
+public class MascotaTest {
+    private static final Logger LOG = Logger.getLogger(MascotaTest.class.getName());
 
        /*
      * Prueba para validar a la mascota
@@ -26,15 +25,16 @@ public class AppTest {
     public void datosCompletos() {
         LOG.info("Iniciado test datosCompletos");
 
-        Mascota mascota1 = new Mascota("Boby","Canis familiaris","Beagle",3,"macho", "Gris", 8.4f);
+        Mascota mascotas = new Mascota("2", "Boby","Canis familiaris","Beagle",3,"macho", "Gris", 8.4f);
 
-        assertEquals("Boby", mascota1.nombre());
-        assertEquals("Canis familiaris", mascota1.especie());
-        assertEquals("Beagle", mascota1.raza());
-        assertEquals(3, mascota1.edad());
-        assertEquals("macho", mascota1.genero());
-        assertEquals("Gris", mascota1.color());
-        assertEquals(8.4f, mascota1.peso());
+        assertEquals("2", mascotas.id());
+        assertEquals("Boby", mascotas.nombres());
+        assertEquals("Canis familiaris", mascotas.especie());
+        assertEquals("Beagle", mascotas.raza());
+        assertEquals(3, mascotas.edad());
+        assertEquals("macho", mascotas.genero());
+        assertEquals("Gris", mascotas.color());
+        assertEquals(8.4f, mascotas.peso());
 
         LOG.info("Los datos estan completos");
     }
@@ -46,7 +46,7 @@ public class AppTest {
      @Test
      public void datosNulos(){
         LOG.info("Inicio prueba datosNulos");
-        assertThrows(Throwable.class, ()-> new Mascota(null, null, null, 0, null, null, 0f));
+        assertThrows(Throwable.class, ()-> new Mascota(null, null, null, null, 0, null, null, 0f));
         LOG.info("Error, los datos no pueden ser nulos");
 
         
@@ -55,7 +55,7 @@ public class AppTest {
      @Test
      public void datosVacios(){
         LOG.info("Inicio prueba datosVacios");
-        assertThrows(Throwable.class, ()-> new Mascota("", "", "", 0, "", "", 0f));
+        assertThrows(Throwable.class, ()-> new Mascota("", "", "", "", 0, "", "", 0f));
         LOG.info("Error, faltan los datos para registrar a la mascota");
 
      }
@@ -63,18 +63,15 @@ public class AppTest {
      @Test
      public void edadNegativa(){
         LOG.info("Inicio prueba edadNegativa");
-        assertThrows(Throwable.class, ()-> new Mascota("Boby", "Canis familiaris", "Beagle", -3, "macho", "Gris", 8.4f));
+        assertThrows(Throwable.class, ()-> new Mascota("34","Boby", "Canis familiaris", "Beagle", -3, "macho", "Gris", 8.4f));
         LOG.info("Error, la edad no puede ser negativa");
      }
 
      @Test
      public void pesoNegativo(){
         LOG.info("Inicio prueba pesoNegativo");
-        assertThrows(Throwable.class, ()-> new Mascota("Boby", "Canis familiaris", "Beagle", 3, "macho", "Gris", -8.4f));
+        assertThrows(Throwable.class, ()-> new Mascota("65","Boby", "Canis familiaris", "Beagle", 3, "macho", "Gris", -8.4f));
         LOG.info("Error, el peso no puede ser negativo");
      }
 
- 
-
-     
 }
