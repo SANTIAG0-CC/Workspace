@@ -27,14 +27,14 @@ public class MascotaTest {
 
         Mascota mascotas = new Mascota("2", "Boby","Canis familiaris","Beagle",3,"macho", "Gris", 8.4f);
 
-        assertEquals("2", mascotas.id());
-        assertEquals("Boby", mascotas.nombres());
-        assertEquals("Canis familiaris", mascotas.especie());
-        assertEquals("Beagle", mascotas.raza());
-        assertEquals(3, mascotas.edad());
-        assertEquals("macho", mascotas.genero());
-        assertEquals("Gris", mascotas.color());
-        assertEquals(8.4f, mascotas.peso());
+        assertEquals("2", mascotas.getId());
+        assertEquals("Boby", mascotas.getNombres());
+        assertEquals("Canis familiaris", mascotas.getEspecie());
+        assertEquals("Beagle", mascotas.getNombres());
+        assertEquals(3, mascotas.getEdad());
+        assertEquals("macho", mascotas.getGenero());
+        assertEquals("Gris", mascotas.getColor());
+        assertEquals(8.4f, mascotas.getPeso());
 
         LOG.info("Los datos estan completos");
     }

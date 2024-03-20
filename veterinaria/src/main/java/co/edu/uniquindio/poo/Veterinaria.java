@@ -1,6 +1,8 @@
 package co.edu.uniquindio.poo;
 
 import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.LinkedList;
 
 public class Veterinaria {
@@ -26,7 +28,7 @@ public class Veterinaria {
      */
 
     public void agregarMascota( Mascota mascota){
-        assert verificarMascotaExistente(mascota.id()) == false;
+        assert verificarMascotaExistente(mascota.getId()) == false;
         mascotas.add(mascota);
     }
 
@@ -39,8 +41,8 @@ public class Veterinaria {
 
     private boolean verificarMascotaExistente(String id){
         boolean existe = false;
-        for(Mascota mascota1 : mascotas){
-            if(mascota1.id().equals(id)){
+        for(Mascota mascota : mascotas){
+            if(mascota.getId().equals(id)){
                 existe = true;
             }
         }
@@ -52,11 +54,10 @@ public class Veterinaria {
      * @param mascota
      */
 
-    public void agregarMascotaMayor10(Mascota mascota) {
-        if (mascota.getEdad() > 10) {
-            agregarMascota(mascota);
-        }
+     public boolean getMascotaMayor10(Mascota mascota) {
+        return mascota.getEdad() > 10;
     }
+    
 
     /**
      * Metodo para obtener el nombre de la Veterinaria
@@ -66,6 +67,43 @@ public class Veterinaria {
     public String getNombre(){
         return nombre;
     }
+
+        public Collection<Mascota> getMascotasOrdenadas(){
+        Collection<Mascota> listaOrdenada = null;
+
+        //objeto que se encarga de comparar por los nombres
+        Comparator.comparing(Mascota :: getNombres);
+        listaOrdenada = mascotas.stream().sorted(Comparator.comparing(Mascota :: getNombres)).toList();
+
+
+        return Collections.unmodifiableCollection(listaOrdenada);
+    }
+    
+
+    public Collection<Mascota> getEdadMascotasOrdenadasDescendente(){
+        Collection<Mascota> listaOrdenada = null;
+
+        //objeto que se encarga de comparar por los nombres
+        Comparator.comparing(Mascota :: getEdad);
+        listaOrdenada = mascotas.stream().sorted(Comparator.comparing(Mascota :: getEdad).reversed()).toList();
+
+
+        return Collections.unmodifiableCollection(listaOrdenada);
+    }
+
+
+    public Collection<Mascota>obtenerListaMascotasMayore(){
+        Collection<Mascota> listaMayoresEdad = new LinkedList<>();
+
+        for (Mascota mascota : this.mascotas){
+            if (mascota.getEdad()> 10){
+
+            }
+        }
+        
+        return Collections.unmodifiableCollection(listaMayoresEdad);
+    }
+
 
 
         /**

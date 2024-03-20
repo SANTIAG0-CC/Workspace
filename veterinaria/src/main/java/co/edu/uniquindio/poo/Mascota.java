@@ -1,11 +1,18 @@
 package co.edu.uniquindio.poo;
 
-public record Mascota(String id, String nombres, String especie, String raza, int edad, String genero, String color,
-        Float peso) {
-
+public class Mascota {
+    private String id;
+    private String nombres;
+    private String especie;
+    private String raza;
+    private int edad;
+    private String genero;
+    private String color;
+    private Float peso;
    
 
-    public Mascota {
+    public Mascota (String id, String nombres, String especie, String raza, int edad, String genero, String color,
+    Float peso) {
         assert id != null && !id.isBlank() : "El id de la mascota no puede ser null y tampoco puede estar vacío.";
         assert nombres != null && !nombres.isBlank()
                 : "El nombre de la mascota no puede ser null y tampoco puede estar vacío.";
@@ -24,7 +31,7 @@ public record Mascota(String id, String nombres, String especie, String raza, in
         return edad;
     }
 
-    public String id() {
+    public String getId() {
         return id;
     }
 
