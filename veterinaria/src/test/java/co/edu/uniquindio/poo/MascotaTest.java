@@ -25,16 +25,16 @@ public class MascotaTest {
     public void datosCompletos() {
         LOG.info("Iniciado test datosCompletos");
 
-        Mascota mascotas = new Mascota("2", "Boby","Canis familiaris","Beagle",3,"macho", "Gris", 8.4f);
-
-        assertEquals("2", mascotas.getId());
-        assertEquals("Boby", mascotas.getNombres());
-        assertEquals("Canis familiaris", mascotas.getEspecie());
-        assertEquals("Beagle", mascotas.getNombres());
-        assertEquals(3, mascotas.getEdad());
-        assertEquals("macho", mascotas.getGenero());
-        assertEquals("Gris", mascotas.getColor());
-        assertEquals(8.4f, mascotas.getPeso());
+        Mascota mascota = new Mascota("23", "Boby","Canis familiaris","Beagle",3,"macho", "Gris", 8.4f);
+        
+        assertEquals("23", mascota.getId()); 
+        assertEquals("Boby", mascota.getNombre());
+        assertEquals("Canis familiaris", mascota.getEspecie());
+        assertEquals("Beagle", mascota.getRaza());
+        assertEquals(3, mascota.getEdad());
+        assertEquals("macho", mascota.getGenero());
+        assertEquals("Gris", mascota.getColor());
+        assertEquals(8.4f, mascota.getPeso());
 
         LOG.info("Los datos estan completos");
     }

@@ -72,8 +72,8 @@ public class Veterinaria {
         Collection<Mascota> listaOrdenada = null;
 
         //objeto que se encarga de comparar por los nombres
-        Comparator.comparing(Mascota :: getNombres);
-        listaOrdenada = mascotas.stream().sorted(Comparator.comparing(Mascota :: getNombres)).toList();
+        Comparator.comparing(Mascota :: getNombre);
+        listaOrdenada = mascotas.stream().sorted(Comparator.comparing(Mascota :: getNombre)).toList();
 
 
         return Collections.unmodifiableCollection(listaOrdenada);

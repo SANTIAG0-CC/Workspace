@@ -2,7 +2,7 @@ package co.edu.uniquindio.poo;
 
 public class Mascota {
     private String id;
-    private String nombres;
+    private String nombre;
     private String especie;
     private String raza;
     private int edad;
@@ -11,10 +11,10 @@ public class Mascota {
     private Float peso;
    
 
-    public Mascota (String id, String nombres, String especie, String raza, int edad, String genero, String color,
+    public Mascota (String id, String nombre, String especie, String raza, int edad, String genero, String color,
     Float peso) {
         assert id != null && !id.isBlank() : "El id de la mascota no puede ser null y tampoco puede estar vacío.";
-        assert nombres != null && !nombres.isBlank()
+        assert nombre != null && !nombre.isBlank()
                 : "El nombre de la mascota no puede ser null y tampoco puede estar vacío.";
         assert especie != null && !especie.isBlank()
                 : "La especie de la mascota no puede ser null y tampoco puede estar vacío.";
@@ -25,6 +25,15 @@ public class Mascota {
         assert color != null && !color.isBlank()
                 : "El color de la mascota no puede ser null y tampoco puede estar vacío.";
         assert peso >= 0;
+
+        this.id = id;
+        this.nombre = nombre;
+        this.especie = especie;
+        this.raza = raza;
+        this.edad = edad;
+        this.genero = genero;
+        this.color = color;
+        this.peso = peso;
     }
 
     public int getEdad() {
@@ -35,8 +44,8 @@ public class Mascota {
         return id;
     }
 
-    public String getNombres() {
-        return nombres;
+    public String getNombre() {
+        return nombre;
     }
 
     public String getEspecie() {
